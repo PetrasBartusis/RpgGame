@@ -29,9 +29,6 @@
 // run parent create event
 event_inherited();
 
-//set player values
-hp = 3;
-
 //physics values
 spd = 2;
 hspd = 0;
