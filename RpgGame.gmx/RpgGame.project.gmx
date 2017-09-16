@@ -24,6 +24,8 @@
     <sprite>sprites\spr_expr</sprite>
     <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_dialog</sprite>
+    <sprite>sprites\spr_sign</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -49,7 +51,10 @@
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
     </scripts>
-    <script>scripts\scr_chance.gml</script>
+    <scripts name="game_helper_scripts">
+      <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_string_copy_words.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_lifeform_parent</object>
@@ -62,6 +67,10 @@
     <object>objects\obj_player_stats</object>
     <object>objects\obj_expr</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_health</object>
+    <object>objects\obj_speaker</object>
+    <object>objects\obj_dialog</object>
+    <object>objects\obj_sign</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
