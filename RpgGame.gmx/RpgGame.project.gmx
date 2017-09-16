@@ -54,6 +54,8 @@
     <scripts name="game_helper_scripts">
       <script>scripts\scr_chance.gml</script>
       <script>scripts\scr_string_copy_words.gml</script>
+      <script>scripts\scr_save_game.gml</script>
+      <script>scripts\scr_load_game.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -71,10 +73,13 @@
     <object>objects\obj_speaker</object>
     <object>objects\obj_dialog</object>
     <object>objects\obj_sign</object>
+    <object>objects\obj_input</object>
+    <object>objects\obj_pause_menu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_two</room>
+    <room>rooms\rm_pause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

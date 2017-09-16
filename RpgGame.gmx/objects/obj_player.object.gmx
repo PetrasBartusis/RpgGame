@@ -45,9 +45,6 @@ state = scr_move_state;
 attacked = false;
 face = RIGHT;
 
-//call script for player control
-scr_get_input();
-
 </string>
           </argument>
         </arguments>
@@ -254,8 +251,9 @@ if(state == scr_attack_state){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set fixed rotation
+            <string>/// Set fixed rotation and persistence
 phy_fixed_rotation = true;
+persistent = true;
 </string>
           </argument>
         </arguments>

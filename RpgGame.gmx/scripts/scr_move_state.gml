@@ -1,10 +1,12 @@
 ///scr_move_state
 
-//check player input
-scr_get_input();
+if(xaxis){
+    var xdir = lengthdir_x(8, face * 90);
+    var ydir = lengthdir_y(8, face * 90);
+}
 
 //check if player is dashing
-if(dash_key){
+if(obj_input.dash_key){
     var xdir = lengthdir_x(8, face * 90);
     var ydir = lengthdir_y(8, face * 90);
     var speaker = instance_place(x + xdir, y + ydir, obj_speaker);
@@ -34,17 +36,17 @@ if(dash_key){
 }
 
 //check if player is dashing
-if(attack_key){
+if(obj_input.attack_key){
     //start attack animation from the start
     image_index = 0;
     state = scr_attack_state;
 }
 
 // Get direction
-dir = point_direction(0, 0, xaxis, yaxis);
+dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis);
 
 // Get the length
-if(xaxis == 0 and yaxis == 0){
+if(obj_input.xaxis == 0 and obj_input.yaxis == 0){
     len = 0;
     } else {
     len = spd;
@@ -65,16 +67,16 @@ if(len == 0) image_index = 0;
 
 switch(face){
     case RIGHT:
-    sprite_index = spr_player_right;
-    break;
+        sprite_index = spr_player_right;
+        break;
     case UP:
-    sprite_index = spr_player_up;
-    break;
+        sprite_index = spr_player_up;
+        break;
     case LEFT:
-    sprite_index = spr_player_left;
-    break;
+        sprite_index = spr_player_left;
+        break;
     case DOWN:
-    sprite_index = spr_player_down;
-    break;
+        sprite_index = spr_player_down;
+        break;
 }
 
