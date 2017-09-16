@@ -21,6 +21,9 @@
     <sprite>sprites\spr_enemy_slime</sprite>
     <sprite>sprites\bg_grass</sprite>
     <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_expr</sprite>
+    <sprite>sprites\spr_health</sprite>
+    <sprite>sprites\spr_door</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -42,9 +45,11 @@
         <script>scripts\scr_check_for_player.gml</script>
       </scripts>
       <script>scripts\scr_enemy_idle_state.gml</script>
+      <script>scripts\scr_enemy_stall_state.gml</script>
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
     </scripts>
+    <script>scripts\scr_chance.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_lifeform_parent</object>
@@ -54,9 +59,13 @@
     <object>objects\obj_dash_effect</object>
     <object>objects\obj_enemy_sprite</object>
     <object>objects\obj_damage</object>
+    <object>objects\obj_player_stats</object>
+    <object>objects\obj_expr</object>
+    <object>objects\obj_door</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_one</room>
+    <room>rooms\rm_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
