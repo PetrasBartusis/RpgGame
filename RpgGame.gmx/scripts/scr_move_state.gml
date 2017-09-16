@@ -1,9 +1,5 @@
 ///scr_move_state
-
-if(xaxis){
-    var xdir = lengthdir_x(8, face * 90);
-    var ydir = lengthdir_y(8, face * 90);
-}
+movement = MOVE;
 
 //check if player is dashing
 if(obj_input.dash_key){
@@ -54,6 +50,14 @@ if(obj_input.spell_key){
     }
 }
 
+//check if player is dashing
+if(obj_input.swap_key){
+    var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
+    if(place_meeting(x, y + 4, nearest_weapon)){
+        scr_swap_weapons(nearest_weapon);
+    }
+}
+
 // Get direction
 dir = point_direction(0, 0, obj_input.xaxis, obj_input.yaxis);
 
@@ -62,7 +66,7 @@ if(obj_input.xaxis == 0 and obj_input.yaxis == 0){
     len = 0;
     } else {
     len = spd;
-    scr_get_face();
+    scr_get_face(dir);
 }
 
 // Get the hspd and vspd
@@ -76,19 +80,4 @@ phy_position_y += vspd;
 // Control the sprite
 image_speed = .3;
 if(len == 0) image_index = 0;
-
-switch(face){
-    case RIGHT:
-        sprite_index = spr_player_right;
-        break;
-    case UP:
-        sprite_index = spr_player_up;
-        break;
-    case LEFT:
-        sprite_index = spr_player_left;
-        break;
-    case DOWN:
-        sprite_index = spr_player_down;
-        break;
-}
 

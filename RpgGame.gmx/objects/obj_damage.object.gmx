@@ -81,6 +81,8 @@ instance_destroy();
             <string>/// Damage player
 if(other.id != creator){
     obj_player_stats.hp -= damage;
+    audio_play_sound(snd_player_takes_damage, 9, false);
+    
     //Apply knockback
     if(instance_exists(creator)){
         var dir = point_direction(creator.x, creator.y, other.x, other.y);

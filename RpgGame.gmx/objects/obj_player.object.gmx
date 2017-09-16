@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Create
+//check for more players so it wouldn't duplicate
+if(instance_number(obj_player) &gt; 1) instance_destroy();
 // run parent create event
 event_inherited();
 
@@ -39,9 +41,20 @@ yaxis = 0;
 dir = 0;
 image_speed = .1;
 state = scr_move_state;
-attacked = false;
 face = RIGHT;
+movement = MOVE;
+weapon_sprite = spr_sword;
 
+// Create the sprite array
+sprite[RIGHT, MOVE] = spr_player_right;
+sprite[UP, MOVE] = spr_player_up;
+sprite[LEFT, MOVE] = spr_player_left;
+sprite[DOWN, MOVE] = spr_player_down;
+
+sprite[RIGHT, ATTACK] = spr_player_attack_right;
+sprite[UP, ATTACK] = spr_player_attack_up;
+sprite[LEFT, ATTACK] = spr_player_attack_left;
+sprite[DOWN, ATTACK] = spr_player_attack_down;
 </string>
           </argument>
         </arguments>
@@ -92,6 +105,10 @@ state = scr_move_state;
             <string>/// Move the player in the step event
 depth = -y;
 script_execute(state);
+
+// Set the correct sprite, according to the 2d array
+sprite_index = sprite[face, movement];
+
 // Check for death
 if(obj_player_stats.hp &lt;= 0){
     instance_destroy();
@@ -125,7 +142,8 @@ with(other){
 
 // Restore player health
 with(obj_player_stats){
-    hp = min(hp+5, maxhp);
+    hp = min(hp + 5, maxhp);
+    audio_play_sound(snd_expr, 6, false);
 }
 
 </string>
@@ -181,6 +199,7 @@ if(room_exists(other.new_room)) {
             <string>/// Collect expr
 with(other){
     instance_destroy();
+    audio_play_sound(snd_expr, 6, false);
 }
 
 // Level up code
