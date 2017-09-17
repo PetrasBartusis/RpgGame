@@ -47,9 +47,9 @@ weapon_sprite = spr_sword;
 
 // Create the sprite array
 sprite[RIGHT, MOVE] = spr_player_right;
-sprite[UP, MOVE] = spr_player_up;
+sprite[UP, MOVE] = spr_example_up;
 sprite[LEFT, MOVE] = spr_player_left;
-sprite[DOWN, MOVE] = spr_example_down_2;
+sprite[DOWN, MOVE] = spr_example_down;
 
 sprite[RIGHT, ATTACK] = spr_player_attack_right;
 sprite[UP, ATTACK] = spr_player_attack_up;
