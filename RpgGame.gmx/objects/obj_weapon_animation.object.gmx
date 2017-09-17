@@ -3,7 +3,7 @@
   <spriteName>spr_sword</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>/// Initialize the weapon animation parent
 dir = 0;
+animationStepArray[0] = -180;
+animationStepArray[1] = -5;
+animationStepArray[2] = -5;
+
+current_step = 0;
 </string>
           </argument>
         </arguments>
@@ -53,6 +58,10 @@ dir = 0;
 if(instance_exists(obj_player)){
     x = obj_player.x;
     y = obj_player.y;
+    if(obj_player.face==RIGHT){
+        x = obj_player.x + 4;
+        y = obj_player.y + 2;
+    }
 } else {
     instance_destroy();
 }
@@ -79,11 +88,16 @@ if(instance_exists(obj_player)){
           <argument>
             <kind>1</kind>
             <string>/// Animation
-if(image_angle &gt;= dir - 45) {
-    image_angle -= 18;
+depth = -y + 5;
+if(image_angle &gt;= dir -45) {
+    current_step++;
+    if(array_length_1d(animationStepArray) &lt; current_step){
+        image_angle -= animationStepArray[current_step];
+    }
 } else {
     instance_destroy();
 }
+
 </string>
           </argument>
         </arguments>

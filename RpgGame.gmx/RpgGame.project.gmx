@@ -46,11 +46,19 @@
     <sprite>sprites\spr_player_example_right</sprite>
     <sprite>sprites\spr_player_example_down</sprite>
     <sprite>sprites\spr_get_colors</sprite>
-    <sprite>sprites\spr_example_down</sprite>
-    <sprite>sprites\spr_example_up</sprite>
     <sprite>sprites\spr_example</sprite>
     <sprite>sprites\spr_examples</sprite>
-    <sprite>sprites\spr_player_down_example</sprite>
+    <sprites name="Example">
+      <sprite>sprites\spr_example_left</sprite>
+      <sprite>sprites\spr_example_down</sprite>
+      <sprite>sprites\spr_example_right</sprite>
+      <sprite>sprites\spr_example_up</sprite>
+      <sprite>sprites\spr_player_down_example</sprite>
+      <sprite>sprites\spr_example_attack_down</sprite>
+      <sprite>sprites\spr_example_attack_left</sprite>
+      <sprite>sprites\spr_example_attack_right</sprite>
+      <sprite>sprites\spr_example_attack_up</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
