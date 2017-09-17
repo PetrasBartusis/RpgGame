@@ -1,12 +1,12 @@
 ///scr_attack_state
-image_speed = .05;//default was .6
+image_speed = .6
 //set attack animation to which sprite player is using
 movement = ATTACK;
 
 if(scr_animation_hit_frame(2)){
     var attack_animation = instance_create(x, y, obj_weapon_animation);
     attack_animation.dir = face * 90;
-    attack_animation.image_angle = (face * 90) + 125;
+    attack_animation.image_angle = (face * 90) + 135;
     attack_animation.sprite_index = weapon_sprite;
 }
 
@@ -16,19 +16,19 @@ if(scr_animation_hit_frame(3)){
     switch(face){
         case DOWN:
             xx = x;
-            yy = y + 12;
+            yy = y + 18;
             break;
         case UP:
             xx = x;
-            yy = y - 10;
+            yy = y - 16;
             break;
         case RIGHT:
-            xx = x + 10;
-            yy = y + 2;
+            xx = x + 14;
+            yy = y + 3;
             break;
         case LEFT:
-            xx = x - 10;
-            yy = y + 2;
+            xx = x - 14;
+            yy = y + 3;
             break;
     }
     audio_play_sound(snd_sword_attack, 8, false);

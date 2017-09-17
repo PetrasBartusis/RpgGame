@@ -38,6 +38,7 @@ xaxis = 0;
 yaxis = 0;
 movement = IDLE;
 face = RIGHT
+expr_drop = 3;
 
 // Create the sprite array
 sprite[RIGHT, MOVE] = spr_chinlin_run_right;
@@ -76,14 +77,8 @@ sprite[DOWN, IDLE] = spr_chinlin_stand_down;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Create the experience and health
-instance_create(x, y, obj_expr);
-audio_play_sound(snd_enemy_die, 5, false);
-
-// Drop a health pack
-if(scr_chance(.5)){
-    instance_create(x+random_range(-4,4), y + random_range(-4,4), obj_health);
-}
+            <string>/// Run the drop loot script
+scr_enemy_drop_loot();
 </string>
           </argument>
         </arguments>

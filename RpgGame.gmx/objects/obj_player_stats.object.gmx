@@ -34,6 +34,8 @@ expr = 0;
 maxexpr = 3;
 level = 1;
 attack = 1;
+//weapon attack
+weapon_damage = 0;
 
 // Get the player's xstart and ystart
 if(instance_exists(obj_player)){
@@ -188,6 +190,8 @@ room_start_action = NEW_ROOM;
 draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
 draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
 draw_text(32,48, "LEVEL: " + string(level));
+draw_text(32,64, "XP: " + string(expr) + "/" + string(maxexpr));
+draw_text(32,80, "ATTACK: " + string(attack));
 </string>
           </argument>
         </arguments>

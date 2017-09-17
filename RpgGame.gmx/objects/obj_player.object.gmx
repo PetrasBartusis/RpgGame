@@ -32,7 +32,7 @@ if(instance_number(obj_player) &gt; 1) instance_destroy();
 event_inherited();
 
 //physics values
-spd = 2;
+spd = 2.5;
 hspd = 0;
 vspd = 0;
 len = 0;
@@ -44,6 +44,7 @@ state = scr_move_state;
 face = RIGHT;
 movement = MOVE;
 weapon_sprite = spr_sword;
+in_combat = true;
 
 // Create the sprite array
 sprite[RIGHT, MOVE] = spr_example_right;
@@ -55,6 +56,12 @@ sprite[RIGHT, ATTACK] = spr_example_attack_right;
 sprite[UP, ATTACK] = spr_example_attack_up;
 sprite[LEFT, ATTACK] = spr_example_attack_left;
 sprite[DOWN, ATTACK] = spr_example_attack_down;
+
+sprite[RIGHT, CURRENT_WEAPON] = spr_sword;
+sprite[UP, CURRENT_WEAPON] = spr_sword;
+sprite[DOWN, CURRENT_WEAPON] = spr_sword;
+sprite[LEFT, CURRENT_WEAPON] = spr_sword;
+
 </string>
           </argument>
         </arguments>
@@ -108,6 +115,10 @@ script_execute(state);
 
 // Set the correct sprite, according to the 2d array
 sprite_index = sprite[face, movement];
+
+// If the player is in combat, draw current weapon
+
+
 
 // Check for death
 if(obj_player_stats.hp &lt;= 0){
@@ -198,13 +209,14 @@ if(room_exists(other.new_room)) {
             <kind>1</kind>
             <string>/// Collect expr
 with(other){
+    var expr_to_add = expr;
     instance_destroy();
     audio_play_sound(snd_expr, 6, false);
 }
 
 // Level up code
 with(obj_player_stats){
-    expr += 1;
+    expr += expr_to_add;
     if(expr &gt;= maxexpr){
         level += 1;
         expr = expr - maxexpr;
@@ -295,6 +307,8 @@ persistent = true;
             <string>/// Draw shadow
 draw_sprite(spr_player_shadow, image_index, x, y);
 draw_self();
+
+scr_draw_current_weapon();
 </string>
           </argument>
         </arguments>

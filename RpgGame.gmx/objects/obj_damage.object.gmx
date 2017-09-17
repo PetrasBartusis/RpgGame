@@ -152,7 +152,7 @@ if(other.id != creator){
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>12,12</point>
-    <point>12,12</point>
+    <point>16,16</point>
+    <point>16,12</point>
   </PhysicsShapePoints>
 </object>

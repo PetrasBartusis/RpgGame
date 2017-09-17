@@ -41,8 +41,16 @@
         <sprite>sprites\spr_chinlin_run_right</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_sword</sprite>
-    <sprite>sprites\spr_axe</sprite>
+    <sprites name="Weapons">
+      <sprite>sprites\spr_axe</sprite>
+      <sprites name="Sword">
+        <sprite>sprites\spr_sword</sprite>
+        <sprite>sprites\spr_sword_down</sprite>
+        <sprite>sprites\spr_sword_up</sprite>
+        <sprite>sprites\spr_sword_left</sprite>
+        <sprite>sprites\spr_sword_right</sprite>
+      </sprites>
+    </sprites>
     <sprite>sprites\spr_player_example_right</sprite>
     <sprite>sprites\spr_player_example_down</sprite>
     <sprite>sprites\spr_get_colors</sprite>
@@ -59,6 +67,7 @@
       <sprite>sprites\spr_example_attack_right</sprite>
       <sprite>sprites\spr_example_attack_up</sprite>
     </sprites>
+    <sprite>sprites\spr_player_cast_spell_down</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -69,8 +78,10 @@
       <script>scripts\scr_move_state.gml</script>
       <script>scripts\scr_dash_state.gml</script>
       <script>scripts\scr_attack_state.gml</script>
+      <script>scripts\scr_cast_spell_state.gml</script>
       <scripts name="helper_scripts">
         <script>scripts\scr_get_input.gml</script>
+        <script>scripts\scr_draw_current_weapon.gml</script>
       </scripts>
     </scripts>
     <scripts name="enemy_scripts">
@@ -83,6 +94,7 @@
       <script>scripts\scr_enemy_stall_state.gml</script>
       <script>scripts\scr_enemy_wander_state.gml</script>
       <script>scripts\scr_enemy_chase_state.gml</script>
+      <script>scripts\scr_enemy_drop_loot.gml</script>
     </scripts>
     <scripts name="game_helper_scripts">
       <script>scripts\scr_chance.gml</script>
