@@ -43,6 +43,11 @@
     </sprites>
     <sprite>sprites\spr_sword</sprite>
     <sprite>sprites\spr_axe</sprite>
+    <sprite>sprites\spr_player_example_right</sprite>
+    <sprite>sprites\spr_player_example_down</sprite>
+    <sprite>sprites\spr_get_colors</sprite>
+    <sprite>sprites\spr_example_down_2</sprite>
+    <sprite>sprites\spr_example</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
