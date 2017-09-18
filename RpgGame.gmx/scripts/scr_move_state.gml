@@ -1,5 +1,14 @@
 ///scr_move_state
-movement = MOVE;
+if(!obj_player.in_combat){
+    movement = MOVE;
+    spd = 2.5;
+    image_speed = .5;
+} else {
+    movement = COMBAT;
+    spd = 1.75;
+    image_speed = .25;
+}
+
 
 //check if player is dashing
 if(obj_input.dash_key){
@@ -34,9 +43,12 @@ if(obj_input.dash_key){
 //check if player is dashing
 if(obj_input.attack_key){
     //start attack animation from the start
-    image_index = 0;
-    state = scr_attack_state;
+    if(in_combat){
+        image_index = 0;
+        state = scr_attack_state;
+    }
 }
+
 
 //check if player is dashing
 if(obj_input.spell_key){
@@ -55,6 +67,16 @@ if(obj_input.swap_key){
     var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
     if(place_meeting(x, y + 4, nearest_weapon)){
         scr_swap_weapons(nearest_weapon);
+    }
+}
+
+if(obj_input.sheath_key){
+    if(obj_player.in_combat){
+            obj_player.in_combat = false;
+            weapon.visible = false;
+    } else {
+        obj_player.in_combat = true;
+        weapon.visible = true;
     }
 }
 
@@ -78,6 +100,5 @@ phy_position_x += hspd;
 phy_position_y += vspd;
 
 // Control the sprite
-image_speed = .5;
 if(len == 0) image_index = 0;
 

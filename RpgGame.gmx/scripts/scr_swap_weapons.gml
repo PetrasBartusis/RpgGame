@@ -1,5 +1,6 @@
 ///scr_swap_weapons(new_weapon)
 var new_weapon = argument0;
+//swap attack weapon sprites
 var temp = weapon_sprite;
 weapon_sprite = new_weapon.sprite_index;
 new_weapon.sprite_index = temp;
@@ -17,5 +18,22 @@ if(instance_exists(obj_player_stats)){
     //set the item damage to last weapon used by the player
     new_weapon.weapon_damage = temp_damage;
 }
+
+// swap weapon sprites
+var tempSprite = sprite[RIGHT, CURRENT_WEAPON];
+sprite[RIGHT, CURRENT_WEAPON] = new_weapon.spr_right;
+new_weapon.spr_right = tempSprite;
+
+var tempSprite = sprite[UP, CURRENT_WEAPON];
+sprite[UP, CURRENT_WEAPON] = new_weapon.spr_up;
+new_weapon.spr_up = tempSprite;
+
+var tempSprite = sprite[LEFT, CURRENT_WEAPON];
+sprite[LEFT, CURRENT_WEAPON] = new_weapon.spr_left;
+new_weapon.spr_left = tempSprite;
+
+var tempSprite = sprite[DOWN, CURRENT_WEAPON];
+sprite[DOWN, CURRENT_WEAPON] = new_weapon.spr_down;
+new_weapon.spr_down = tempSprite;
 
 

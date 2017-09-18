@@ -8,6 +8,7 @@ attack_key = keyboard_check_pressed(ord("X"));
 pause_key = keyboard_check_pressed(vk_escape);
 spell_key = keyboard_check_pressed(ord("Z"));
 swap_key = keyboard_check_pressed(ord("V"));
+sheath_key = keyboard_check_pressed(ord("A"));
 
 // Get the axis
 xaxis = (right_key - left_key);

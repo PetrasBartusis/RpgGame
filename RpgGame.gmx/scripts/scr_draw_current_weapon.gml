@@ -1,20 +1,38 @@
 ///scr_draw_current_weapon();
-if(in_combat){
-    var xx = x;
-    var yy = y;
-    switch(face){
-        case RIGHT:
-            
-            break;
-        case UP:
-            
-            break;
-        case LEFT:
-            
-            break;
-        case DOWN:
-            
-            break;
+if(instance_exists(obj_player)){
+    if(obj_player.in_combat and obj_player.movement != ATTACK){
+        var toDraw = true;
+        var xx = obj_player.x;
+        var yy = obj_player.y;
+        switch(obj_player.face){
+            case RIGHT:
+                yy+=4;
+                xx-=1;
+                depth = -y - 10;
+                break;
+            case UP:
+                xx+=3;
+                yy+=2;
+                depth = - y + 10;
+                break;
+            case LEFT:
+                yy+=2;
+                depth = -y + 10;
+                break;
+            case DOWN:
+                yy+=4;
+                xx-=5;
+                depth = -y - 5;
+                break;
+        }
+        x = xx;
+        y = yy;
+        visible = true;
+        sprite_index = obj_player.sprite[obj_player.face, CURRENT_WEAPON];
+    } else {
+        visible = false;
     }
-    draw_sprite(sprite[face, CURRENT_WEAPON], image_index, x, y);
+} else {
+    visible = false;
 }
+

@@ -42,13 +42,19 @@
       </sprites>
     </sprites>
     <sprites name="Weapons">
-      <sprite>sprites\spr_axe</sprite>
       <sprites name="Sword">
         <sprite>sprites\spr_sword</sprite>
         <sprite>sprites\spr_sword_down</sprite>
         <sprite>sprites\spr_sword_up</sprite>
         <sprite>sprites\spr_sword_left</sprite>
         <sprite>sprites\spr_sword_right</sprite>
+      </sprites>
+      <sprites name="Axe">
+        <sprite>sprites\spr_axe</sprite>
+        <sprite>sprites\spr_axe_right</sprite>
+        <sprite>sprites\spr_axe_left</sprite>
+        <sprite>sprites\spr_axe_down</sprite>
+        <sprite>sprites\spr_axe_up</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_player_example_right</sprite>
@@ -57,17 +63,25 @@
     <sprite>sprites\spr_example</sprite>
     <sprite>sprites\spr_examples</sprite>
     <sprites name="Example">
-      <sprite>sprites\spr_example_left</sprite>
-      <sprite>sprites\spr_example_down</sprite>
-      <sprite>sprites\spr_example_right</sprite>
-      <sprite>sprites\spr_example_up</sprite>
-      <sprite>sprites\spr_player_down_example</sprite>
-      <sprite>sprites\spr_example_attack_down</sprite>
-      <sprite>sprites\spr_example_attack_left</sprite>
-      <sprite>sprites\spr_example_attack_right</sprite>
-      <sprite>sprites\spr_example_attack_up</sprite>
+      <sprites name="MOVE">
+        <sprite>sprites\spr_example_down</sprite>
+        <sprite>sprites\spr_example_left</sprite>
+        <sprite>sprites\spr_example_up</sprite>
+        <sprite>sprites\spr_example_right</sprite>
+        <sprite>sprites\spr_player_up_combat</sprite>
+        <sprite>sprites\spr_player_right_combat</sprite>
+        <sprite>sprites\spr_player_down_combat</sprite>
+        <sprite>sprites\spr_player_left_combat</sprite>
+      </sprites>
+      <sprites name="ATTACK">
+        <sprite>sprites\spr_example_attack_down</sprite>
+        <sprite>sprites\spr_example_attack_right</sprite>
+        <sprite>sprites\spr_example_attack_left</sprite>
+        <sprite>sprites\spr_example_attack_up</sprite>
+      </sprites>
+      <sprite>sprites\spr_player_cast_spell_down</sprite>
     </sprites>
-    <sprite>sprites\spr_player_cast_spell_down</sprite>
+    <sprite>sprites\spr_tree</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -83,6 +97,7 @@
         <script>scripts\scr_get_input.gml</script>
         <script>scripts\scr_draw_current_weapon.gml</script>
       </scripts>
+      <script>scripts\scr_combat_state.gml</script>
     </scripts>
     <scripts name="enemy_scripts">
       <scripts name="enemy_helper_scripts">
@@ -125,8 +140,12 @@
     <object>objects\obj_input</object>
     <object>objects\obj_pause_menu</object>
     <object>objects\obj_projectile</object>
-    <object>objects\obj_weapon_animation</object>
-    <object>objects\obj_weapon_item</object>
+    <object>objects\obj_tree</object>
+    <objects name="Weapon">
+      <object>objects\obj_weapon_item</object>
+      <object>objects\obj_weapon_animation</object>
+      <object>objects\obj_weapon_draw</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

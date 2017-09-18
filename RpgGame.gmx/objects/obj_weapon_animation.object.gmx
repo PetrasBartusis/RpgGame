@@ -125,24 +125,20 @@ if(instance_exists(obj_player)){
             <kind>1</kind>
             <string>/// Animation
 depth -= y;
-/*if(alarm[0] &lt;= 0){
-    alarm[0] = 7.5;//7.5;
-}*/
-if(image_angle &gt;= dir - 45) {
-    current_step++;
-    if(!jump){
-        image_angle -= 175;
-        jump = true;
+if(obj_player.movement == ATTACK){
+    if(image_angle &gt;= dir - 45) {
+        current_step++;
+        if(!jump){
+            image_angle -= 175;
+            jump = true;
+        } else {
+            image_angle -= 2;
+        }
     } else {
-        image_angle -= 2;
+        instance_destroy();
     }
-    //animationStepArray[current_step];
-    //if(array_length_1d(animationStepArray) &lt; 3){
-       // image_angle -= animationStepArray[current_step];
-    //}
-} else {
-    instance_destroy();
 }
+
 
 </string>
           </argument>
