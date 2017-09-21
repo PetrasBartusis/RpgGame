@@ -1,5 +1,5 @@
 ///scr_attack_state
-image_speed = .8;
+image_speed = .65;
 //set attack animation to which sprite player is using
 movement = ATTACK;
 
@@ -39,11 +39,6 @@ if(scr_animation_hit_frame(3)){
 
 // Get direction
 dir = face * 90;
-//scr_get_face(dir);
-
-/*if(len == 0) {
-    dir = face * 90;
-}*/
 len = 1;
 // Get the length
 // Get the hspd and vspd

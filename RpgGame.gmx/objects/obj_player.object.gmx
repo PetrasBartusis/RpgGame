@@ -127,7 +127,7 @@ state = scr_move_state;
           <argument>
             <kind>1</kind>
             <string>/// Move the player in the step event
-depth = -y-20;
+depth = -y;
 script_execute(state);
 
 // Set the correct sprite, according to the 2d array
@@ -323,7 +323,7 @@ persistent = true;
           <argument>
             <kind>1</kind>
             <string>/// Draw shadow
-draw_sprite(spr_player_shadow, image_index, x, y);
+draw_sprite(spr_shadow, image_index, x, y);
 draw_self();
 </string>
           </argument>
@@ -337,15 +337,15 @@ draw_self();
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>5</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>3</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>22,42</point>
-    <point>10,42</point>
-    <point>10,24</point>
-    <point>22,24</point>
+    <point>23,43</point>
+    <point>9,43</point>
+    <point>9,24</point>
+    <point>23,24</point>
   </PhysicsShapePoints>
 </object>

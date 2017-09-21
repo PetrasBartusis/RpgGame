@@ -23,6 +23,6 @@ if(gamepad_is_connected(0)){
     attack_key = gamepad_button_check_pressed(0, gp_face3);
     pause_key = gamepad_button_check_pressed(0, gp_start);
     spell_key = gamepad_button_check_pressed(0, gp_face2);
-    swap_key = gamepad_button_check_pressed(0, gp_face4);
+    sheath_key = gamepad_button_check_pressed(0, gp_face4);
 }
 

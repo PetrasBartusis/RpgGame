@@ -124,7 +124,7 @@ if(len == 0) {
         image_speed = .03;
     } else {
         movement = IDLE_COMBAT;
-        image_speed = .03;
+        image_speed = .05;
     }
     
 }
