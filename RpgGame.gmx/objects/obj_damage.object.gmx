@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_damage</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -132,6 +132,8 @@ if(other.id != creator){
     with (other){
         physics_apply_impulse(x, y, xforce, yforce);
     }
+    obj_view.x += random_range(-3,3); 
+    obj_view.y += random_range(-3,3); 
 }
 
 </string>
@@ -152,7 +154,7 @@ if(other.id != creator){
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,12</point>
+    <point>20,20</point>
+    <point>20,12</point>
   </PhysicsShapePoints>
 </object>

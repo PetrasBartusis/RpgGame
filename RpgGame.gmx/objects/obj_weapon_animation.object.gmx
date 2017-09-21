@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_sword</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
@@ -124,7 +124,7 @@ if(instance_exists(obj_player)){
           <argument>
             <kind>1</kind>
             <string>/// Animation
-depth -= y;
+/*depth -= y;
 if(obj_player.movement == ATTACK){
     if(image_angle &gt;= dir - 45) {
         current_step++;
@@ -137,7 +137,7 @@ if(obj_player.movement == ATTACK){
     } else {
         instance_destroy();
     }
-}
+}*/
 
 
 </string>

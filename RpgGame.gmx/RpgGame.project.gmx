@@ -11,7 +11,7 @@
     <sound>sound\snd_expr</sound>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Player">
+    <sprites name="FillerPlayer">
       <sprite>sprites\spr_player_down</sprite>
       <sprite>sprites\spr_player_right</sprite>
       <sprite>sprites\spr_player_left</sprite>
@@ -29,6 +29,13 @@
     <sprite>sprites\spr_health</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_dialog</sprite>
+    <sprites name="spr_fireball_spell">
+      <sprite>sprites\spr_spell_down</sprite>
+      <sprite>sprites\spr_spell_up</sprite>
+      <sprite>sprites\spr_spell_left</sprite>
+      <sprite>sprites\spr_spell_right</sprite>
+      <sprite>sprites\spr_smoke_trail</sprite>
+    </sprites>
     <sprite>sprites\spr_sign</sprite>
     <sprites name="Enemies">
       <sprite>sprites\spr_enemy_slime</sprite>
@@ -82,6 +89,41 @@
       <sprite>sprites\spr_player_cast_spell_down</sprite>
     </sprites>
     <sprite>sprites\spr_tree</sprite>
+    <sprite>sprites\spr_update_player</sprite>
+    <sprites name="Player">
+      <sprites name="MOVE">
+        <sprite>sprites\spr_player_right_main</sprite>
+        <sprite>sprites\spr_player_up_main</sprite>
+        <sprite>sprites\spr_player_down_main</sprite>
+        <sprite>sprites\spr_player_left_main</sprite>
+      </sprites>
+      <sprites name="IDLE">
+        <sprite>sprites\spr_player_idle_down</sprite>
+        <sprite>sprites\spr_player_idle_up</sprite>
+        <sprite>sprites\spr_player_idle_right</sprite>
+        <sprite>sprites\spr_player_idle_left</sprite>
+      </sprites>
+      <sprites name="SWORD">
+        <sprites name="ATTACK_HAND_SWORD">
+          <sprite>sprites\spr_attack_move_sword_right</sprite>
+          <sprite>sprites\spr_attack_move_sword_up</sprite>
+          <sprite>sprites\spr_attack_move_sword_left</sprite>
+          <sprite>sprites\spr_attack_move_sword_down</sprite>
+        </sprites>
+        <sprites name="ATTACK_SWORD">
+          <sprite>sprites\spr_attack_sword_left</sprite>
+          <sprite>sprites\spr_attack_sword_down</sprite>
+          <sprite>sprites\spr_attack_sword_right</sprite>
+          <sprite>sprites\spr_attack_sword_up</sprite>
+        </sprites>
+        <sprites name="IDLE_SWORD">
+          <sprite>sprites\spr_idle_right_sword</sprite>
+          <sprite>sprites\spr_idle_left_sword</sprite>
+          <sprite>sprites\spr_idle_down_sword</sprite>
+          <sprite>sprites\spr_idle_up_sword</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -90,6 +132,7 @@
   <scripts name="scripts">
     <scripts name="player_states">
       <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_idle_state.gml</script>
       <script>scripts\scr_dash_state.gml</script>
       <script>scripts\scr_attack_state.gml</script>
       <script>scripts\scr_cast_spell_state.gml</script>
@@ -136,8 +179,8 @@
     <object>objects\obj_health</object>
     <object>objects\obj_speaker</object>
     <object>objects\obj_dialog</object>
-    <object>objects\obj_sign</object>
     <object>objects\obj_input</object>
+    <object>objects\obj_sign</object>
     <object>objects\obj_pause_menu</object>
     <object>objects\obj_projectile</object>
     <object>objects\obj_tree</object>
@@ -146,6 +189,7 @@
       <object>objects\obj_weapon_animation</object>
       <object>objects\obj_weapon_draw</object>
     </objects>
+    <object>objects\smoke_trail</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>

@@ -1,5 +1,5 @@
 ///scr_draw_current_weapon();
-if(instance_exists(obj_player)){
+/*if(instance_exists(obj_player)){
     if(obj_player.in_combat and obj_player.movement != ATTACK){
         var toDraw = true;
         var xx = obj_player.x;
@@ -27,12 +27,12 @@ if(instance_exists(obj_player)){
         }
         x = xx;
         y = yy;
-        visible = true;
+        visible = false;
         sprite_index = obj_player.sprite[obj_player.face, CURRENT_WEAPON];
     } else {
         visible = false;
     }
 } else {
     visible = false;
-}
+}*/
 
